@@ -1,0 +1,58 @@
+---
+- name: Replaces device configuration of listed interfaces with provided configuration
+  cisco.ios.ios_interfaces:
+    config:
+      - name: "{{ first_wan_interface }}"
+        description: WAN interface
+        enabled: true
+      - name: "{{ first_lan_interface }}"
+        description: LAN interface
+        enabled: true
+    state: replaced
+  when: "'router-berlin' in inventory_hostname"
+
+- name: Replaces device configuration of listed interfaces with provided configuration
+  cisco.ios.ios_l3_interfaces:
+    config:
+      - name: "{{ first_wan_interface }}"
+        ipv4:
+          - address: "{{ first_wan_ip_subnet }}"
+      - name: "{{ first_lan_interface }}"
+        ipv4:
+          - address: "{{ first_lan_ip_subnet }}"
+    state: replaced
+  when: "'router-berlin' in inventory_hostname"
+
+- name: Configure ip route
+  cisco.ios.ios_config:
+    lines: "{{ first_ip_route }}"
+  when: "'router-berlin' in inventory_hostname"
+
+- name: Replaces device configuration of listed interfaces with provided configuration
+  cisco.ios.ios_interfaces:
+    config:
+      - name: "{{ second_wan_interface }}"
+        description: WAN interface
+        enabled: true
+      - name: "{{ second_lan_interface }}"
+        description: LAN interface
+        enabled: true
+    state: replaced
+  when: "'router-paris' in inventory_hostname"
+
+- name: Replaces device configuration of listed interfaces with provided configuration
+  cisco.ios.ios_l3_interfaces:
+    config:
+      - name: "{{ second_wan_interface }}"
+        ipv4:
+          - address: "{{ second_wan_ip_subnet }}"
+      - name: "{{ second_lan_interface }}"
+        ipv4:
+          - address: "{{ second_lan_ip_subnet }}"
+    state: replaced
+  when: "'router-paris' in inventory_hostname"
+
+- name: Configure ip route
+  cisco.ios.ios_config:
+    lines: "{{ second_ip_route }}"
+  when: "'router-paris' in inventory_hostname"

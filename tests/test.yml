@@ -1,0 +1,20 @@
+---
+- name: Ping IP addresses
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Test reachability of Berlin subnet
+      ansible.builtin.raw: ping -c 5 "{{ first_lan_ip_test  }}"
+
+    - name: Test reachability of Paris subnet
+      ansible.builtin.raw: ping -c 5 "{{ second_lan_ip_test  }}"
+
+    - name: Test reachability of WAN interface
+      ansible.builtin.raw: ping -c 5 "{{ first_wan_ip_test  }}"
+
+    - name: Test reachability of WAN interface
+      ansible.builtin.raw: ping -c 5 "{{ second_wan_ip_test  }}"
+
+    - name: Print outputs
+      ansible.builtin.debug:
+        msg: "All tests reachability passed"
