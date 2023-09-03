@@ -1,0 +1,6 @@
+---
+- name: Network configuration orchestration playbook
+  hosts: routers
+  gather_facts: false
+  roles:
+    - ansible_network_routing
