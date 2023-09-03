@@ -1,3 +1,5 @@
+[![Push to Galaxy](https://github.com/MozkaGit/Ansible_NetDevOps_role/actions/workflows/push_to_galaxy.yml/badge.svg)](https://github.com/MozkaGit/Ansible_NetDevOps_role/actions/workflows/push_to_galaxy.yml)
+
 Role Name
 =========
 
