@@ -2,7 +2,12 @@
 name: Push to Galaxy
 
 on:
-  - push
+  push:
+    paths-ignore:
+      - 'README.md'
+      - 'ansible.cfg'
+      - 'inventory.yml'
+      - 'files/*'
 
 jobs:
   build:
