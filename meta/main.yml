@@ -1,7 +1,7 @@
 galaxy_info:
   author: MozkaGit
   description: My role allows you to configure network interface IP addresses and IP routing.
-  company: your company (optional)
+  company: MozkaGit
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
