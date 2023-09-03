@@ -3,7 +3,15 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+1. Replace Interface Configuration: It replaces the device configuration for specified interfaces, enabling them and setting their descriptions. This is done for both WAN and LAN interfaces.
+
+2. Configure IP Routes: After configuring the interfaces, the playbook configures IP routes on the routers based on the router's hostname
+
+3. Execute Commands: The playbook runs several commands on the routers using the `cisco.ios.ios_command` module. It retrieves the IOS version, displays a brief overview of IP interfaces, and captures the router's running configuration.
+
+4. Print and Save Output: The output of the executed commands is registered, printed for debugging purposes, and saved to a specified destination. This allows for documentation and backup of the router's configuration.
+
+In summary, this role automates the initial configuration and maintenance of Cisco routers in a network, focusing on interfaces and routing, and it collects and saves relevant information for future reference.
 
 Requirements
 ------------
