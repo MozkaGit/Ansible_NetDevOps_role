@@ -1,7 +1,9 @@
 [![Push to Galaxy](https://github.com/MozkaGit/Ansible_NetDevOps_role/actions/workflows/push_to_galaxy.yml/badge.svg)](https://github.com/MozkaGit/Ansible_NetDevOps_role/actions/workflows/push_to_galaxy.yml)
 
-Role Name
+Ansible NetDevOps
 =========
+
+This Ansible role, `ansible_netdevops_role`, automates the initial configuration and maintenance of Cisco routers in a network. It focuses on configuring WAN and LAN interfaces, setting up IP routes based on the router's hostname, executing commands, and capturing and saving the router's running configuration. This role is designed to simplify network management tasks.
 
 1. Replace Interface Configuration: It replaces the device configuration for specified interfaces, enabling them and setting their descriptions. This is done for both WAN and LAN interfaces.
 
@@ -13,36 +15,46 @@ Role Name
 
 In summary, this role automates the initial configuration and maintenance of Cisco routers in a network, focusing on interfaces and routing, and it collects and saves relevant information for future reference.
 
-Requirements
-------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
-
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+- `first_rtr`: The name of the first router.
+
+- `second_rtr`: The name of the second router.
+- `first_wan_interface`: The WAN interface for the first router.
+- `first_lan_interface`: The LAN interface for the first router.
+- `second_wan_interface`: The WAN interface for the second router.
+- `second_lan_interface`: The LAN interface for the second router.
+- `first_wan_ip_subnet`: The subnet for the WAN interface of the first router.
+- `first_lan_ip_subnet`: The subnet for the LAN interface of the first router.
+- `second_wan_ip_subnet`: The subnet for the WAN interface of the second router.
+- `second_lan_ip_subnet`: The subnet for the LAN interface of the second router.
+- `first_wan_ip_test`: Test IP address for the first WAN interface.
+- `first_lan_ip_test`: Test IP address for the first LAN interface.
+- `second_wan_ip_test`: Test IP address for the second WAN interface.
+- `second_lan_ip_test`: Test IP address for the second LAN interface.
+- `first_ip_route`: IP route configuration for the first router.
+- `second_ip_route`: IP route configuration for the second router.
+- `backups_destination`: Destination path for saving router configuration backups.
 
 Dependencies
-------------
+----------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None.
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
+    - hosts: all
       roles:
-         - { role: username.rolename, x: 42 }
+         - mozkagit.ansible_netdevops_role
 
 License
 -------
 
-BSD
+MIT / BSD
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+This role was created by MozkaGit.
