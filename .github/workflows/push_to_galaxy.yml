@@ -4,7 +4,6 @@ name: Push to Galaxy
 on:
   push:
     paths-ignore:
-      - 'README.md'
       - 'ansible.cfg'
       - 'inventory.yml'
       - 'files/*'
