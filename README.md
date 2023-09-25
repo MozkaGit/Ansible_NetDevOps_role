@@ -1,6 +1,4 @@
-[![Push to Galaxy](https://github.com/MozkaGit/Ansible_NetDevOps_role/actions/workflows/push_to_galaxy.yml/badge.svg)](https://github.com/MozkaGit/Ansible_NetDevOps_role/actions/workflows/push_to_galaxy.yml)
-
-Ansible NetDevOps
+Ansible NetDevOps<br>[![Push to Galaxy](https://github.com/MozkaGit/Ansible_NetDevOps_role/actions/workflows/push_to_galaxy.yml/badge.svg)](https://github.com/MozkaGit/Ansible_NetDevOps_role/actions/workflows/push_to_galaxy.yml)
 =========
 
 This Ansible role, `ansible_netdevops_role`, automates the initial configuration and maintenance of Cisco routers in a network. It focuses on configuring WAN and LAN interfaces, setting up IP routes based on the router's hostname, executing commands, and capturing and saving the router's running configuration. This role is designed to simplify network management tasks.
